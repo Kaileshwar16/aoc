@@ -38,12 +38,10 @@ def solve(points, K):
 
     edges.sort()
 
-    # Process the first K closest pairs
     for idx in range(min(K, len(edges))):
         _, a, b = edges[idx]
         dsu.union(a, b)
 
-    # Compute final component sizes
     comp = {}
     for i in range(n):
         r = dsu.find(i)
@@ -54,7 +52,6 @@ def solve(points, K):
 
 
 if __name__ == "__main__":
-    # Read input
     points = []
     with open("input8.txt") as f:
         for line in f:
